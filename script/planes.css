@@ -1,0 +1,10 @@
+.user {
+  background-image: url("images/userPlaneSprit.png");
+  height: 128px;
+  width: 128px;
+  position: absolute;
+}
+
+.enemy{
+
+}

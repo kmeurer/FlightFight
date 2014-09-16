@@ -9,7 +9,7 @@ var makePlane = function( top, left)}{
     this.left = newLeft;
   }
 
-  plane.fire = function(weapon???){
+  plane.fire = function(weapon){
     // fire weapon at targets
     // constant top & fast left
   }
@@ -19,16 +19,14 @@ var makePlane = function( top, left)}{
 
 var userPlane = function(){
   var plane = makePlane( 50, 50 );
-
+  plane.$node.addClass("user");
   plane.move = function( newTop ){
     this.top = newTop
   };
 
   plane.fire = function(){
     // pass in weapon object and fire
-    var weapon = MakeWeapon(this.top, this.left);
+    var weapon = MakeWeapon(this.top+64, this.left+128);
     weapon.move(speed);
   }
 }
-
-
