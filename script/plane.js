@@ -11,6 +11,9 @@ var makePlane = function( top, left ){
     //update top & left positions
     this.top = newTop;
     this.left = newLeft;
+    var moveTop = Math.random()*200 + this.top;
+    var moveBot = Math.random()*200 + this.left;
+    this.$node.animate({top: moveTop, left: moveBot });
   };
 
   plane.fire = function(weapon){
@@ -24,8 +27,17 @@ var makePlane = function( top, left ){
 var userPlane = function(){
   var plane = makePlane( 150, 25 );
   plane.$node.addClass("user");
-  plane.move = function( newTop ){
-    this.top = newTop;
+  plane.move = function( changeX, changeY ){
+    var detached = $(".user").detach();
+    var newTop = this.top + changeY;
+    var newLeft = this.left + changeX;
+    detached.css({
+      top: newTop,
+      left: newLeft,
+    });
+    this.top += changeY;
+    this.left += changeX;
+    $("body").append(this.$node);
   };
 
   plane.fire = function(){
