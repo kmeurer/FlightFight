@@ -1,0 +1,16 @@
+.user {
+  background-image: url("../images/userPlaneSpriteNew.png");
+  height: 50px;
+  width: 128px;
+  position: absolute;
+}
+
+.enemy{
+  background-image: url("../images/enemyPlaneSprite.png");
+  height: 50px;
+  width: 128px;
+  position: absolute;
+}
+h1{
+  color: yellow;
+}

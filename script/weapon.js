@@ -1,4 +1,4 @@
-var MakeWeapon = function(top, left){
+var makeWeapon = function(top, left){
   //starts at location of airplane
   var weapon = {};
   weapon.top = top;
@@ -9,5 +9,8 @@ var MakeWeapon = function(top, left){
     }
   };
   return weapon;
-}
+};
+
+
+
 
