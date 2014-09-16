@@ -1,16 +1,22 @@
+.weapon{
+  background-image: url("../images/missile-sprite.png");
+  width: 128px;
+  height: 50px;
+  position: absolute;
+}
+
 .user {
-  background-image: url("images/userPlaneSprite.png");
-  height: 128px;
+  background-image: url("../images/userPlaneSprite.png");
+  height: 50px;
   width: 128px;
   position: absolute;
 }
 
 .enemy{
-  background-image: url("images/enemyPlaneSprite.png");
+  background-image: url("../images/enemyPlaneSprite.png");
   height: 128px;
   width: 128px;
   position: absolute;
 }
-h1{
-  color: yellow;
-}
+
+

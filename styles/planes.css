@@ -1,3 +1,10 @@
+.weapon{
+  background-image: url("../images/missile-sprite.png");
+  width: 96px;
+  height: 23px;
+  position: absolute;
+}
+
 .user {
   background-image: url("../images/userPlaneSpriteNew.png");
   height: 50px;
@@ -7,7 +14,7 @@
 
 .enemy{
   background-image: url("../images/enemyPlaneSprite.png");
-  height: 50px;
+  height: 128px;
   width: 128px;
   position: absolute;
 }
