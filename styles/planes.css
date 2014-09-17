@@ -22,9 +22,9 @@
 }
 
 .destroy {
-  background-image: url("../images/explosion2.gif");
-  height: 200px;
-  width: 142px;
+  background-image: url("../images/explosion.gif");
+  height: 49px;
+  width: 35px;
   position: absolute;
   z-index: 52;
 }
