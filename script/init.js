@@ -1,5 +1,9 @@
 $(document).ready(function(){
   window.planes = [];
+  var score = {};
+  score.value = 0;
+  score.$node = $('<div id ="scoreDiv"><h2>Score</h2><span id = "score"></span></div>');
+  
 });
 
 
@@ -9,13 +13,25 @@ $(document).ready(function(){
 var gameRunning = false;
 
 var startGame = function(){
+  //console.log(score.$node);
   gameRunning = true;
+  //$("body").prepend(score.$node);
   $('body').prepend(user.$node);
   var score = 0;
   $('#welcome').remove();
-
+  window.setInterval( function(){updateScore();}, 500);
   window.setInterval( function(){spawnEnemy();}, 1500);
   window.setInterval( function(){moveEnemy();}, 15);
+};
+
+
+var updateScore = function(){
+  if( gameRunning = true ){
+    $("#score").html(score.value);
+  } else{
+    score.$node.remove();
+
+  }
 };
 
 var spawnEnemy = function(){

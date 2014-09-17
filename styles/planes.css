@@ -35,3 +35,11 @@
   height: 20px;
   position: absolute;
 }
+
+.userDestroy {
+  background-image: url("../images/explosion2.gif");
+  height: 200px;
+  width: 142px;
+  position: absolute;
+  z-index: 52;
+}

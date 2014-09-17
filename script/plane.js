@@ -26,7 +26,6 @@ var makePlane = function( top, left ){
     setTimeout(function(){
       $('.destroy').remove();
       //.body.removeChildren(document.getElementsByClassName('destroy'));
-      console.log("in anonymous");
       },
       800);
       this.left = -150;
@@ -47,6 +46,27 @@ var userPlane = function(){
     var weapon = makeWeapon(this.top+15, this.left+60);
     weapon.move(30);
   }
+
+  plane.destroy = function(){
+    // add class to the node of destroyed
+
+    var $replacement = $('<span class="userDestroy"></span>');
+    $replacement.css({top: this.top, left: this.left});
+    $('body').prepend($replacement);
+    // give time to show explosion
+    //this.setTimeout(, 900);
+    setTimeout(function(){
+      $('.userDestroy').remove();
+      //.body.removeChildren(document.getElementsByClassName('destroy'));
+      console.log("in anonymous");
+      },
+      800);
+      this.left = -150;
+      this.move(1, 1);
+    // remove node from dom
+    // remove plane from array of planes
+  };
+
   return plane;
 };
 
