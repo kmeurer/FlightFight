@@ -60,6 +60,9 @@ var enemyPlane = function(top, left){
   }
 
   enemy.move = function(changeX, changeY){
+    if(Math.random() < .004){
+      this.fire();
+    }
     this.top += changeY;
     this.left += changeX;
     this.$node.css({top: this.top, left: this.left,});

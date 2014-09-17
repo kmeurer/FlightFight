@@ -616,7 +616,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #cloud2{
   top: 120px;
   left: 600px;
-  z-index: -1;
 }
 
 #cloud3{
@@ -635,7 +634,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   border-radius: 100px;
 
   position: absolute;
-
+  z-index: -1;
   opacity: 60%;
 
   margin: 150px auto;

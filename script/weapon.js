@@ -33,12 +33,16 @@ var makeWeapon = function(top, left){
 };
 
 var makeEnemyWeapon = function( top, left ){
-  if(checkCollision(this, user.$node)){
-    user.$node.destroy();
-  }
+  console.log(this);
+  console.log(user);
   var weapon = makeWeapon(top, left);
   weapon.$node.addClass("enemyWeapon");
   weapon.move = function(speed){
+    if(checkCollision(this, user)){
+      user.destroy();
+      this.$node.remove();
+      return;
+    }
     if(this.left < $(window).width()){
       this.left -= speed;
       this.$node.css({left: this.left});

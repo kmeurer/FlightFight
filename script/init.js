@@ -3,6 +3,8 @@ $(document).ready(function(){
 });
 
 
+  // initial declaration of user Plane. Automatically sets to specific location
+  var user = userPlane();
 //used as a safeguard against user action outside of a game context
 var gameRunning = false;
 
@@ -42,7 +44,6 @@ var moveEnemy = function(){
 };
 
 var checkCollision = function(obj1, obj2){
-  // if the width of object 1
   var min1 = {x: obj1.left, y: obj1.top};
   var max1 = {x: obj1.left + obj1.$node.width(), y: obj1.top + obj1.$node.height()};
   var min2 = {x: obj2.left, y: obj2.top};
@@ -56,8 +57,6 @@ var checkCollision = function(obj1, obj2){
   return true;
 };
 
-// initial declaration of user Plane. Automatically sets to specific location
-var user = userPlane();
 //call function whenever a key is pressed--> central controls
 $('html').keydown(function(e){
   if(gameRunning === true){
