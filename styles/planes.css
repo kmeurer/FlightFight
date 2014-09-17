@@ -1,3 +1,11 @@
+.enemy {
+  background-image: url("../images/enemy1sprite.png");
+  height: 50px;
+  width: 128px;
+  position: absolute;
+  z-index: 50;
+}
+
 .weapon{
   background-image: url("../images/missile-sprite.png");
   width: 96px;
@@ -10,11 +18,20 @@
   height: 50px;
   width: 128px;
   position: absolute;
+  z-index: 51;
 }
 
-.enemy{
-  background-image: url("../images/enemyPlaneSprite.png");
-  height: 128px;
-  width: 128px;
+.destroy {
+  background-image: url("../images/explosion2.gif");
+  height: 200px;
+  width: 142px;
+  position: absolute;
+  z-index: 52;
+}
+
+.enemyWeapon {
+  background-image: url("../images/enemyMissile.png");
+  width: 60px;
+  height: 20px;
   position: absolute;
 }

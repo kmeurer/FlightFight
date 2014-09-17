@@ -13,17 +13,40 @@ var makeWeapon = function(top, left){
 
 
   weapon.move = function(speed){
+    for(var i = 0; i < window.planes.length; i++){
+      if(checkCollision(this, window.planes[i])){
+        window.planes[i].destroy();
+        this.$node.remove();
+        return;
+      }
+    }
     if(this.left < $(window).width()){
       this.left += speed;
       this.$node.css({left: this.left});
-      setTimeout(this.move.bind(this, speed), 100);
+      setTimeout(this.move.bind(this, speed), 20);
     } else {
       this.$node.remove();
     }
   };
+
   return weapon;
 };
 
+var makeEnemyWeapon = function( top, left ){
+  if(checkCollision(this, user.$node)){
+    user.$node.destroy();
+  }
+  var weapon = makeWeapon(top, left);
+  weapon.$node.addClass("enemyWeapon");
+  weapon.move = function(speed){
+    if(this.left < $(window).width()){
+      this.left -= speed;
+      this.$node.css({left: this.left});
+      setTimeout(this.move.bind(this, speed), 20);
+    } else {
+      this.$node.remove();
+    }
+  };
 
-
-
+  return weapon;
+}
