@@ -30,7 +30,7 @@ var moveEnemy = function(){
   for( var i = 0; i < window.planes.length; i++){
     if(window.planes[i].left < 0){
       // subtract from score
-      window.planes[i].$node.remove();
+      // window.planes[i].$node.remove();
       window.planes.splice(i, 1);
     }
   }

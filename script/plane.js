@@ -14,20 +14,25 @@ var makePlane = function( top, left ){
     this.$node.animate({top: this.top, left: this.left,}, 5);
   };
 
+  plane.disappear
+
   plane.destroy = function(){
     // add class to the node of destroyed
-    this.$node.removeClass().addClass("destroy");
-    console.log(this.$node);
+    this.$node.removeClass().addClass('destroy');
     // give time to show explosion
-    this.top -= 30;
-    this.left -= 30;
     //this.setTimeout(, 900);
-    console.log(this);
-    this.setTimeout(this.$node.addClass.bind(this,"destroy"), 1000);
-    $(".destroy").remove()
+    console.log(this.$node);
+    var node = this.$node;
+    console.log(node);
+    setTimeout(function(){
+      $('.destroy').remove();
+      //.body.removeChildren(document.getElementsByClassName('destroy'));
+      console.log("in anonymous");
+      },
+      1000);
+      this.left = -1;
     // remove node from dom
     // remove plane from array of planes
-    this.left = -1;
   };
 
   return plane;
