@@ -19,15 +19,25 @@ var startGame = function(){
   $('body').prepend($scoreNode);
   updateScore();
   $('#welcome').remove();
-    window.setInterval( function(){if(gameRunning){updateScore();}}, 500);
-    window.setInterval( function(){if(gameRunning){spawnEnemy();}}, 1500);
-    window.setInterval( function(){if(gameRunning){moveEnemy();}}, 15);
+  scoreUpdate = window.setInterval( function(){if(gameRunning){updateScore();}}, 500);
+  spawnUpdate = window.setInterval( function(){if(gameRunning){spawnEnemy();}}, 1500);
+  enemyUpdate = window.setInterval( function(){if(gameRunning){moveEnemy();}}, 15);
+  endUpdate = window.setInterval( function(){if(!gameRunning){endGame();}}, 500);
 };
+
+var endGame = function(){
+  clearInterval(scoreUpdate);
+  clearInterval(spawnUpdate);
+  clearInterval(enemyUpdate);
+  clearInterval(endUpdate);
+  planes.forEach(function (el, i){
+    el.$node.remove();
+  });
+}
 
 
 var updateScore = function(){
   if( gameRunning = true ){
-    console.log("Score is" + score);
     $("#score").html(score);
   } else{
     $("scoreDiv").remove();
