@@ -37,7 +37,7 @@ var endGame = function(){
   });
   var msg;
   if( score < 10){
-    msg = "You really suck at this.  Play again and prove me wrong."
+    msg = "Flying just isn't your thing.";
   } else if (score < 20 ){
     msg = "I guess you could be an extra in Top Gun if you got lucky.";
   } else if (score < 50 ){
@@ -47,9 +47,9 @@ var endGame = function(){
   } else if (score < 120){
     msg = "I told the Air Force about you.  Expect a call soon."
   } else {
-    msg = "Unbelievable.  You've achieved mastery."
+    msg = "Unbelievable.  You're a true master."
   }
-  var $endNode = $('<div id = "gameOver"><h1>They took you down!</h1><h2>Your score: <span id = "score">' + score + '</span>.</h2><p>' + msg + '</p><button value="Start" onclick = "startGame()">Play Again</button></div>');
+  var $endNode = $('<div id = "gameOver"><h1>Game Over</h1><h2>Your score: <span id = "endScore">' + score + '</span></h2><p>' + msg + '</p><button value="Start" onclick = "startGame()">Play Again</button></div>');
   $('body').prepend($endNode);
   $('#scoreDiv').remove();
 }

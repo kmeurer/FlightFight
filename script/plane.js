@@ -47,6 +47,18 @@ var userPlane = function(){
     weapon.move(30);
   }
 
+  plane.move = function( changeX, changeY ){
+    for(var i = 0 ; i < window.planes.length; i ++){
+      if(checkCollision(this, window.planes[i])){
+        this.destroy();
+      }
+    }
+    this.top += changeY;
+    this.left += changeX;
+    //this.$node.css({top: this.top, left: this.left,});
+    this.$node.animate({top: this.top, left: this.left,}, 5);
+  };
+
   plane.destroy = function(){
     // add class to the node of destroyed
 

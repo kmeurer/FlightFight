@@ -55,7 +55,7 @@
   opacity: .88;
 }
 
-#scoreDiv h2{
+#scoreDiv h2, #gameOver h2{
   font-family: "Renegado", sans-serif;
   font-size: 3em;
   margin: 5px;
