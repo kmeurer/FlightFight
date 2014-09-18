@@ -19,9 +19,9 @@ var startGame = function(){
   $('body').prepend($scoreNode);
   updateScore();
   $('#welcome').remove();
-  window.setInterval( function(){updateScore();}, 500);
-  window.setInterval( function(){spawnEnemy();}, 1500);
-  window.setInterval( function(){moveEnemy();}, 15);
+    window.setInterval( function(){if(gameRunning){updateScore();}}, 500);
+    window.setInterval( function(){if(gameRunning){spawnEnemy();}}, 1500);
+    window.setInterval( function(){if(gameRunning){moveEnemy();}}, 15);
 };
 
 
@@ -35,13 +35,15 @@ var updateScore = function(){
 };
 
 var spawnEnemy = function(){
-  var randTop = Math.random() * $(window).height()-200;
-  while(randTop < 20){
-    randTop = Math.random() * $(window).height()-200;
+  if (gameRunning === true){
+    var randTop = Math.random() * $(window).height()-200;
+    while(randTop < 20){
+      randTop = Math.random() * $(window).height()-200;
+    }
+    var enemy = enemyPlane( randTop, $(window).width() );
+    window.planes.push(enemy);
+    $('body').prepend(enemy.$node);
   }
-  var enemy = enemyPlane( randTop, $(window).width() );
-  window.planes.push(enemy);
-  $('body').prepend(enemy.$node);
 };
 
 var moveEnemy = function(){
@@ -91,7 +93,7 @@ $('html').keydown(function(e){
       user.move(30, 0);
     } else if(code === 32){
       // fire when user presses space
-      user.fire();
+      setTimeout(function(){user.fire();}, 25);
     } else {
       return;
     }

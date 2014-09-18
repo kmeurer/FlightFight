@@ -61,8 +61,10 @@ var userPlane = function(){
       console.log("in anonymous");
       },
       800);
-      this.left = -150;
-      this.move(1, 1);
+    this.left = -150;
+    this.move(1, 1);
+    gameRunning = false;
+    //endGame();
     // remove node from dom
     // remove plane from array of planes
   };
