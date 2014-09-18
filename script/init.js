@@ -79,16 +79,16 @@ $('html').keydown(function(e){
     var code = (e.keyCode ? e.keyCode : e.which);
     if(code === 40){
       // move plane down;
-      user.move(0, 20);
+      user.move(0, 30);
     } else if(code === 38 && user.top > 0){
       // move plane up;
-      user.move(0, -20);
+      user.move(0, -30);
     } else if(code === 37 && user.left > 0){
       // move plane left;
-      user.move(-20, 0);
+      user.move(-30, 0);
     } else if(code === 39){
       // move plane right;
-      user.move(20, 0);
+      user.move(30, 0);
     } else if(code === 32){
       // fire when user presses space
       user.fire();
