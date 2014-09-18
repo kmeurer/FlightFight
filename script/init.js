@@ -1,23 +1,23 @@
 $(document).ready(function(){
   window.planes = [];
-  var score = {};
-  score.value = 0;
-  score.$node = $('<div id ="scoreDiv"><h2>Score</h2><span id = "score"></span></div>');
   
 });
 
 
   // initial declaration of user Plane. Automatically sets to specific location
-  var user = userPlane();
+var user = userPlane();
 //used as a safeguard against user action outside of a game context
 var gameRunning = false;
+  var score = 0;
 
 var startGame = function(){
-  //console.log(score.$node);
+  $scoreNode = $('<div id ="scoreDiv"><h2>Score</h2><span id = "score"></span></div>');
+  console.log("first score is " + score);
   gameRunning = true;
   //$("body").prepend(score.$node);
   $('body').prepend(user.$node);
-  var score = 0;
+  $('body').prepend($scoreNode);
+  updateScore();
   $('#welcome').remove();
   window.setInterval( function(){updateScore();}, 500);
   window.setInterval( function(){spawnEnemy();}, 1500);
@@ -27,10 +27,10 @@ var startGame = function(){
 
 var updateScore = function(){
   if( gameRunning = true ){
-    $("#score").html(score.value);
+    console.log("Score is" + score);
+    $("#score").html(score);
   } else{
-    score.$node.remove();
-
+    $("scoreDiv").remove();
   }
 };
 

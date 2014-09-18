@@ -15,7 +15,7 @@ var makeWeapon = function(top, left){
   weapon.move = function(speed){
     for(var i = 0; i < window.planes.length; i++){
       if(checkCollision(this, window.planes[i])){
-        //  score.value++;
+        score++;
         window.planes[i].destroy();
         this.$node.remove();
         return;
