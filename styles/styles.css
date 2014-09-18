@@ -10,11 +10,11 @@ body {
   font-family: Renegado;
   src: url('fonts/renegado.ttf');
 }
-#welcome h1{
+#welcome h1, #gameOver h1{
   font-family: "Renegado", sans-serif;
   font-size: 4em;
 }
-#welcome{
+#welcome, #gameOver{
   text-align: center;
   border: black solid 10px;
   margin: 0px auto;
@@ -24,12 +24,12 @@ body {
   background-color: orange;
   opacity: .88;
 }
-#welcome p{
+#welcome p, #gameOver p{
   font-family: 'Orbitron', sans-serif;
   font-size: 1.2em;
   color: #575757;
 }
-#welcome button{
+#welcome button, #gameOver button{
   position: relative;
   vertical-align: top;
   width: 60%;
@@ -46,13 +46,15 @@ body {
   -webkit-box-shadow: inset 0 -2px #b53224;
   box-shadow: inset 0 -2px #b53224;
 }
-#welcome button:active {
+#welcome button:active, #gameOver button:active {
   top: 1px;
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 }
+
+
 p{
   font-size: 1.2em;
   font-family: serif;

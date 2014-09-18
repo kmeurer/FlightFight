@@ -5,12 +5,14 @@ $(document).ready(function(){
 
 
   // initial declaration of user Plane. Automatically sets to specific location
-var user = userPlane();
 //used as a safeguard against user action outside of a game context
 var gameRunning = false;
   var score = 0;
 
 var startGame = function(){
+  $('#gameOver').remove();
+  score = 0;
+  user = userPlane();
   $scoreNode = $('<div id ="scoreDiv"><h2>Score</h2><span id = "score"></span></div>');
   console.log("first score is " + score);
   gameRunning = true;
@@ -33,14 +35,29 @@ var endGame = function(){
   planes.forEach(function (el, i){
     el.$node.remove();
   });
+  var msg;
+  if( score < 10){
+    msg = "You really suck at this.  Play again and prove me wrong."
+  } else if (score < 20 ){
+    msg = "I guess you could be an extra in Top Gun if you got lucky.";
+  } else if (score < 50 ){
+    msg = "OK, you're decent."
+  } else if (score < 80 ){
+    msg = "Alright, Goose.  You died, but ya had a good run."
+  } else if (score < 120){
+    msg = "I told the Air Force about you.  Expect a call soon."
+  } else {
+    msg = "Unbelievable.  You've achieved mastery."
+  }
+  var $endNode = $('<div id = "gameOver"><h1>They took you down!</h1><h2>Your score: <span id = "score">' + score + '</span>.</h2><p>' + msg + '</p><button value="Start" onclick = "startGame()">Play Again</button></div>');
+  $('body').prepend($endNode);
+  $('#scoreDiv').remove();
 }
 
 
 var updateScore = function(){
   if( gameRunning = true ){
     $("#score").html(score);
-  } else{
-    $("scoreDiv").remove();
   }
 };
 
